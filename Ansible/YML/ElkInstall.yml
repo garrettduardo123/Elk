@@ -1,0 +1,43 @@
+---
+  - name: ELK_PROJ
+    hosts: elk
+    become: true
+    remote_user: azadmin
+    tasks: 
+        - name: sysctl
+          command: sysctl -w vm.max_map_count=262144
+        - name: sysctl config
+          sysctl:
+            name: vm.max_map_count
+            state: present
+            reload: yes
+            value: '262144'
+        - name: install docker.io
+          apt: 
+           update_cache: yes
+           name: docker.io
+           force_apt_get: yes 
+           state: present
+        - name: install python3-pip
+          apt:
+           name: python3-pip
+           force_apt_get: yes
+           state: present
+        - name: install docker pip
+          pip:
+           name: docker
+           state: present
+        - name: install docker container
+          docker_container:
+            name: elk
+            image: sebp/elk:761
+            state: started
+            restart_policy: always
+            published_ports:
+              - 5601:5601
+              - 9200:9200
+              - 5044:5044
+        - name: make sure systemd restarts docker
+          systemd:
+            name: docker
+            enabled: yes
