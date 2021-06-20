@@ -93,7 +93,7 @@ SSH into the control node and follow the steps below:
 
 ### Download and edit the `hosts` file in the /ansible directory
 ```
-curl -L -O 
+curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/hosts.txt
 
 nano /etc/ansible/hosts
 ```
@@ -124,7 +124,7 @@ curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/filebea
  
   Download and if needed edit the filebeat config file
    
-    curl -L -O
+    curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/filebeat-config.yml
     
 ### Download the metricbeat playbook
 ```
@@ -134,7 +134,7 @@ curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/metricb
    Download and if needed edit the metricbeat config file
  
     
-    curl -L -O 
+    curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/metricbeat-config.yml
     
     
 ### Download the Elk Install playbook
