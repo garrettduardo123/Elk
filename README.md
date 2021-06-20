@@ -109,11 +109,11 @@ nano /etc/ansible/hosts
 curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/docker.yml
 ```
 
-   Next edit the playbook 
+ Next edit the playbook 
 
    `nano docker.yml`
 
-   At line 3 add `webservers` to the hosts file:
+ At line 3 add `webservers` to the hosts file:
    ```
    hosts: webservers
    ``` 
@@ -122,10 +122,10 @@ curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/docker.
 curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/filebeat.yml
 ```
  
-   Download and if needed edit the filebeat config file
-    ```
+  Download and if needed edit the filebeat config file
+   
     curl -L -O
-    ```
+    
 ### Download the metricbeat playbook
 ```
 curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/metricbeat.yml
@@ -133,9 +133,9 @@ curl -L -O https://github.com/garrettduardo123/Elk/blob/main/Ansible/YML/metricb
  
    Download and if needed edit the metricbeat config file
  
-    ```
+    
     curl -L -O 
-    ```
+    
     
 ### Download the Elk Install playbook
 ```
